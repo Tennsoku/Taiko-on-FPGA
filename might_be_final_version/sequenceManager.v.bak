@@ -1,0 +1,575 @@
+module sequenceManager(
+	/*Input*/
+	currentSequence, CLK, 
+	crtState1, crtState2, crtState3, crtState4, crtState5, crtState6, crtState7, crtState8,
+	crtState9, crtState10, crtState11, crtState12, crtState13, crtState14, crtState15,
+	/*Output*/
+	seqSignal1, seqSignal2, seqSignal3, seqSignal4, seqSignal5, seqSignal6, seqSignal7, seqSignal8,
+	seqSignal9, seqSignal10, seqSignal11, seqSignal12, seqSignal13, seqSignal14, seqSignal15,
+	
+	start1, start2, start3, start4, start5, start6, start7, start8, start9, start10, start11, start12, start13, start14, start15
+ 	);
+	
+	input [2:0]currentSequence;
+	input CLK;
+	input [1:0]crtState1, crtState2, crtState3, crtState4, crtState5, crtState6, crtState7, crtState8;
+	input [1:0]crtState9, crtState10, crtState11, crtState12, crtState13, crtState14, crtState15; 
+	output reg [2:0]seqSignal1, seqSignal2, seqSignal3, seqSignal4, seqSignal5, seqSignal6, seqSignal7, seqSignal8;
+	output reg [2:0]seqSignal9, seqSignal10, seqSignal11, seqSignal12, seqSignal13, seqSignal14, seqSignal15;
+	output reg start1, start2, start3, start4, start5, start6, start7, start8, start9, start10, start11, start12, start13, start14, start15;
+	
+	
+	always @(negedge CLK)
+		begin
+			if (currentSequence != 3'b000)
+			begin
+				if (crtState1 == 2'b00)
+					begin
+						seqSignal1 <= currentSequence;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 1;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState2 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= currentSequence;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 1;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState3 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= currentSequence;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 1;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState4 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= currentSequence;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 1;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState5 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= currentSequence;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 1; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState6 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= currentSequence;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 1; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState7 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= currentSequence;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 1;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState8 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= currentSequence;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 1;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState9 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= currentSequence;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 1;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState10 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= currentSequence;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 1;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState11 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= currentSequence;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 1;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState12 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= currentSequence;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 1;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState13 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= currentSequence;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 1;
+						start14 <= 0;
+						start15 <= 0;
+					end
+				else if (crtState14 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= currentSequence;
+						seqSignal15 <= 3'b000;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 1;
+						start15 <= 0;
+					end
+				else if (crtState15 == 2'b00)
+					begin
+						seqSignal1 <= 3'b000;
+						seqSignal2 <= 3'b000;
+						seqSignal3 <= 3'b000;
+						seqSignal4 <= 3'b000;
+						seqSignal5 <= 3'b000;
+						seqSignal6 <= 3'b000;
+						seqSignal7 <= 3'b000;
+						seqSignal8 <= 3'b000;
+						seqSignal9 <= 3'b000;
+						seqSignal10 <= 3'b000;
+						seqSignal11 <= 3'b000;
+						seqSignal12 <= 3'b000;
+						seqSignal13 <= 3'b000;
+						seqSignal14 <= 3'b000;
+						seqSignal15 <= currentSequence;
+						
+						start1 <= 0;
+						start2 <= 0;
+						start3 <= 0;
+						start4 <= 0;
+						start5 <= 0; 
+						start6 <= 0; 
+						start7 <= 0;
+						start8 <= 0;
+						start9 <= 0;
+						start10 <= 0;
+						start11 <= 0;
+						start12 <= 0;
+						start13 <= 0;
+						start14 <= 0;
+						start15 <= 1;
+					end
+			end
+			else
+				begin
+					seqSignal1 <= 3'b000;
+					seqSignal2 <= 3'b000;
+					seqSignal3 <= 3'b000;
+					seqSignal4 <= 3'b000;
+					seqSignal5 <= 3'b000;
+					seqSignal6 <= 3'b000;
+					seqSignal7 <= 3'b000;
+					seqSignal8 <= 3'b000;
+					seqSignal9 <= 3'b000;
+					seqSignal10 <= 3'b000;
+					seqSignal11 <= 3'b000;
+					seqSignal12 <= 3'b000;
+					seqSignal13 <= 3'b000;
+					seqSignal14 <= 3'b000;
+					seqSignal15 <= 3'b000;
+					
+					start1 <= 0;
+					start2 <= 0;
+					start3 <= 0;
+					start4 <= 0;
+					start5 <= 0; 
+					start6 <= 0; 
+					start7 <= 0;
+					start8 <= 0;
+					start9 <= 0;
+					start10 <= 0;
+					start11 <= 0;
+					start12 <= 0;
+					start13 <= 0;
+					start14 <= 0;
+					start15 <= 0;
+				end	
+		end 
+	
+	
+endmodule
+	
